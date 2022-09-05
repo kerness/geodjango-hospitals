@@ -3,6 +3,7 @@ from django_filters import rest_framework as filters
 from rest_framework_gis.filters import GeoFilterSet
 from .models import Hospital
 
+
 class HospitalFilter(GeoFilterSet):
     province = filters.CharFilter(
         method='get_hospitals_by_province', lookup_expr='within'

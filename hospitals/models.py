@@ -1,6 +1,5 @@
-from unittest import mock
 from django.contrib.gis.db import models
-from django.utils.translation import gettext_lazy as _
+
 
 class Hospital(models.Model):
     name = models.CharField(("Hospital Name"), max_length=100)

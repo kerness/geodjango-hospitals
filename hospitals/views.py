@@ -9,6 +9,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from django.contrib.gis.geos import Point
 from django.contrib.gis.measure import D
 
+
 class HospitalViewSet(viewsets.ModelViewSet):
     queryset = Hospital.objects.all()
     serializer_class = HospitalSerializer
@@ -38,5 +39,3 @@ class HospitalViewSet(viewsets.ModelViewSet):
             serialized_hospitals = serializer(closest_hospitals, many=True)
             return Response(serialized_hospitals.data, status=status.HTTP_200_OK)
         return Response(status.HTTP_400_BAD_REQUEST)
-
-

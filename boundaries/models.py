@@ -1,7 +1,5 @@
-import imp
-from tabnanny import verbose
 from django.contrib.gis.db import models
-from django.utils.translation import gettext_lazy as _
+
 
 class Boundary(models.Model):
     adm0_en = models.CharField(max_length=254)

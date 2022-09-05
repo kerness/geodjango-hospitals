@@ -14,12 +14,9 @@ from pathlib import Path
 import environ
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
- 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
-env = environ.Env(DEBUG=(bool,False))
+env = environ.Env(DEBUG=(bool, False))
 environ.Env.read_env(env_file='.env')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env('SECRET_KEY')
@@ -49,7 +46,7 @@ THIRD_PARTY_APPS = [
     'django_filters',
 ]
 
-PROJECT_APPS = [ 
+PROJECT_APPS = [
     'hospitals.apps.HospitalsConfig',
     'boundaries.apps.BoundariesConfig',
 ]
@@ -100,9 +97,6 @@ DATABASES = {
         'PORT': env('PG_PORT'),
     }
 }
- 
-
-
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -121,7 +115,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
- 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
@@ -147,14 +140,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Leaflet config
 
 LEAFLET_CONFIG = {
-    'DEFAULT_CENTER': (-1.94,29.87),
+    'DEFAULT_CENTER': (-1.94, 29.87),
     'DEFAULT_ZOOM': 8,
     'MAX_ZOOM': 20,
     'MIN_ZOOM': 2,
     'SCALE': 'both',
     'ATTRIBUTION_PREFIX': 'Kerness Hospitals API'
 }
-
-# REST_FRAMEWORK = {
-#     'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend')
-# }
