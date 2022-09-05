@@ -42,8 +42,18 @@ DJANGO_APPS = [
     'django.contrib.gis',
 ]
 
-THIRD_PARTY_APPS=['rest_framework','rest_framework_gis', 'leaflet',]
-PROJECT_APPS=['hospitals.apps.HospitalsConfig', 'boundaries.apps.BoundariesConfig',]
+THIRD_PARTY_APPS = [
+    'rest_framework',
+    'rest_framework_gis',
+    'leaflet',
+    'django_filters',
+]
+
+PROJECT_APPS = [ 
+    'hospitals.apps.HospitalsConfig',
+    'boundaries.apps.BoundariesConfig',
+]
+
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 
 MIDDLEWARE = [
@@ -144,3 +154,7 @@ LEAFLET_CONFIG = {
     'SCALE': 'both',
     'ATTRIBUTION_PREFIX': 'Kerness Hospitals API'
 }
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend')
+# }
